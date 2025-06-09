@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="greeting" />
+      <p>{{greeting}}</p>
+      <!-- <button v-bind:class="buttonClasses" v-on:click="onClick">
+        Click Me
+      </button> -->
+      <button :class="active ? 'bg-green-500' : 'bg-blue-500'" @click="onClick">
+        Click Me
+      </button>
+    </div>
+    <script>
+      let app = {
+        data() {
+          return {
+            greeting: 'Hello world',
+            active: false,
+            // buttonClasses: 'bg-green-500 py-2 px-5',
+          };
+        },
+
+        mounted() {
+          setTimeout(() => {
+            this.greeting = 'changed';
+          }, 3000);
+        },
+
+        methods: {
+          onClick() {
+            this.active = !this.active;
+          },
+        },
+      };
+      Vue.createApp(app).mount('#app');
+    </script>
+  </body>
+</html>
