@@ -8,64 +8,10 @@
     <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body class="w-full h-screen grid place-items-center">
-    <div id="app">
-      <section v-show="todo?.length">
-        <h1 class="font-bold">Todo</h1>
-        <ul>
-          <li v-for="assigment in todo" :key="assigment.id">
-            <label>
-              <span>{{assigment.name}}</span>
-              <input type="checkbox" v-model="assigment.complete" />
-            </label>
-          </li>
-        </ul>
-      </section>
-      <section class="mt-5" v-show="completed?.length">
-        <h1 class="font-bold">Completed</h1>
-        <ul>
-          <li v-for="assigment in completed" :key="assigment.id">
-            <label>
-              <span>{{assigment.name}}</span>
-              <input type="checkbox" v-model="assigment.complete" />
-            </label>
-          </li>
-        </ul>
-      </section>
-    </div>
-    <script>
-      let app = {
-        data() {
-          return {
-            assigments: [
-              {
-                id: 1,
-                name: 'eat',
-                complete: false,
-              },
-              {
-                id: 2,
-                name: 'sleep',
-                complete: false,
-              },
-              {
-                id: 3,
-                name: 'work',
-                complete: false,
-              },
-            ],
-          };
-        },
-
-        computed: {
-          todo() {
-            return this.assigments.filter((item) => !item.complete);
-          },
-          completed() {
-            return this.assigments.filter((item) => item.complete);
-          },
-        },
-      };
-      Vue.createApp(app).mount('#app');
+    <div id="app"></div>
+    <script type="module">
+      import App from './js/components/App.js';
+      Vue.createApp(App).mount('#app');
     </script>
   </body>
 </html>
