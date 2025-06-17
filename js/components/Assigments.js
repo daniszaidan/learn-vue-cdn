@@ -18,16 +18,25 @@ export default {
           id: 1,
           name: 'eat',
           complete: false,
+          tag: 'home',
         },
         {
           id: 2,
           name: 'sleep',
           complete: false,
+          tag: 'home',
         },
         {
           id: 3,
-          name: 'work',
+          name: 'coding',
           complete: false,
+          tag: 'work',
+        },
+        {
+          id: 3,
+          name: 'laracast',
+          complete: false,
+          tag: 'learn',
         },
       ],
     };
