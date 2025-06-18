@@ -13,33 +13,14 @@ export default {
 
   data() {
     return {
-      assigments: [
-        {
-          id: 1,
-          name: 'eat',
-          complete: false,
-          tag: 'home',
-        },
-        {
-          id: 2,
-          name: 'sleep',
-          complete: false,
-          tag: 'home',
-        },
-        {
-          id: 3,
-          name: 'coding',
-          complete: false,
-          tag: 'work',
-        },
-        {
-          id: 3,
-          name: 'laracast',
-          complete: false,
-          tag: 'learn',
-        },
-      ],
+      assigments: [],
     };
+  },
+
+  created() {
+    fetch('http://localhost:3000/assigments')
+      .then((response) => response.json())
+      .then((data) => (this.assigments = data));
   },
 
   computed: {
