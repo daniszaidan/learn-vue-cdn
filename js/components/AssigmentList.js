@@ -8,8 +8,10 @@ export default {
       <h1 class="font-bold">{{title}}</h1>
       <tags 
         :initial-tags="assigments.map(item => item.tag)"
-        @change="currentTag = $event"
-        :current-tag="currentTag"
+        // :current-tag="currentTag"
+        // @change="currentTag = $event"
+        // v-model="currentTag"
+        v-model:currentTag="currentTag"
       ></tags>
 
       <ul class="space-y-2">
