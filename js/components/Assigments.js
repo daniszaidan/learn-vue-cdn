@@ -4,10 +4,11 @@ import FormInput from './FormInput.js';
 export default {
   components: { AssigmentList, FormInput },
   template: `
-    <div class="space-y-5">
-      <assigment-list :assigments="todo" title="Todo"></assigment-list>
+    <div class="space-y-5 flex items-start gap-5">
+      <assigment-list :assigments="todo" title="Todo">
+        <form-input @add="add"></form-input>
+      </assigment-list>
       <assigment-list :assigments="completed" title="Completed"></assigment-list>
-      <form-input @add="add"></form-input>
     </div>
   `,
 

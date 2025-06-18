@@ -1,11 +1,12 @@
 import AssigmentItem from './AssigmentItem.js';
+import Card from './Card.js';
 import Tags from './Tags.js';
 
 export default {
-  components: { AssigmentItem, Tags },
+  components: { AssigmentItem, Tags, Card },
   template: `
-    <section v-show="assigments?.length" class='grid gap-5'>
-      <h1 class="font-bold">{{title}}</h1>
+    <card v-show="assigments?.length">
+      <template #heading>{{title}}</template>
       <tags 
         :initial-tags="assigments.map(item => item.tag)"
         // :current-tag="currentTag"
@@ -17,7 +18,7 @@ export default {
       <ul class="space-y-2">
         <assigment-item :assigments="filteredAssigments"></assigment-item>
       </ul>
-    </section>
+    </card>
   `,
 
   data() {
